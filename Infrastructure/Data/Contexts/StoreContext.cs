@@ -11,7 +11,10 @@ namespace Infrastructure.Data.Contexts
 {
     public class StoreContext : DbContext
     {
-        public DbSet<Clothes> Clothes { get; set; }
+        public StoreContext(DbContextOptions options)  : base(options) { }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Categories> Categories { get; set; }
+        public DbSet<User> Users { get; set; }
 
 
         //Converting decimal to double when using Sqlite

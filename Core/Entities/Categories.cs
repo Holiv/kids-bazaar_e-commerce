@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Core.Entities
 {
-    public class Clothes : BaseProduct
+    public class Categories
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
+
+        public List<Product> Products { get; set; }
     }
 }

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Data.Repositories
 {
-    public class GenericRepository : IGenericRepository<Clothes>
+    public class GenericRepository<T> : IGenericRepository<T> where T : BaseProduct
     {
         private readonly StoreContext context;
 
@@ -19,14 +19,21 @@ namespace Infrastructure.Data.Repositories
             this.context = context;
         }
 
-        public async Task<Clothes> GetByIdAsync(int id)
+        public async Task<T> GetByIdAsync(int id)
         {
             throw new NotImplementedException();
         }
 
-        public async Task<IReadOnlyList<Clothes>> ListAllAsync()
+        public Product GetProductTest()
         {
-            var clothes = await context.Set<Clothes>().ToListAsync();
+            var product = new Product();
+            product.Title = "Product Test";
+            return product;
+        }
+
+        public async Task<IReadOnlyList<T>> ListAllAsync()
+        {
+            var clothes = await context.Set<T>().ToListAsync();
             return clothes;
         }
     }
