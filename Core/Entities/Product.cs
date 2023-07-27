@@ -15,10 +15,9 @@ namespace Core.Entities
         }
 
         public string Title { get; set; }
-        public string Type { get; set; }
         public string Description { get; set; }
         public DateTime CreatedAt { get; }
-        public List<string> ImgUrl { get; set; }
+        public string ImgUrl { get; set; }
         public decimal Price { get; set; }
 
         [ForeignKey("CategoriesId")]

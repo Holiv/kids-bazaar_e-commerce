@@ -30,7 +30,7 @@ namespace Infrastructure.Data.Contexts
 
                     foreach (var property in properties)
                     {
-                        modelBuilder.Entity(property.Name).Property(property.Name).HasConversion(typeof(double));
+                        modelBuilder.Entity(entityType.Name).Property(property.Name).HasConversion<double>();
                     }
                 }
             }
