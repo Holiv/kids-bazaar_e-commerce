@@ -96,7 +96,7 @@ namespace Infrastructure.Data.Migrations
             modelBuilder.Entity("Core.Entities.Product", b =>
                 {
                     b.HasOne("Core.Entities.Categories", "Categories")
-                        .WithMany()
+                        .WithMany("Products")
                         .HasForeignKey("CategoriesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -106,6 +106,11 @@ namespace Infrastructure.Data.Migrations
                         .HasForeignKey("UserId");
 
                     b.Navigation("Categories");
+                });
+
+            modelBuilder.Entity("Core.Entities.Categories", b =>
+                {
+                    b.Navigation("Products");
                 });
 
             modelBuilder.Entity("Core.Entities.User", b =>

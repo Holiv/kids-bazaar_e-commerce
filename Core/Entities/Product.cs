@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Core.Entities
 {
-    public class Product : BaseProduct
+    public class Product : BaseEntity
     {
         public Product()
         {

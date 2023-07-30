@@ -12,24 +12,32 @@ namespace Infrastructure.Data.Contexts
     {
         public static async Task SeedAsync (StoreContext context)
         {
-            if (!context.Categories.Any())
+            var categoriesData = File.ReadAllText("../Infrastructure/Data/SeedData/categories.json");
+            var userData = File.ReadAllText("../Infrastructure/Data/SeedData/user.json");
+            var productsData = File.ReadAllText("../Infrastructure/Data/SeedData/products.json");
+
+            var categories = JsonSerializer.Deserialize<List<Categories>>(categoriesData);
+            var user = JsonSerializer.Deserialize<List<User>>(userData);
+            var products = JsonSerializer.Deserialize<List<Product>>(productsData);
+
+            if (context.Categories.Count() < categories.Count)
             {
-                var categoriesData = File.ReadAllText("../Infrastructure/Data/SeedData/categories.json");
-                var categories = JsonSerializer.Deserialize<List<Categories>>(categoriesData);
+                //var categoriesData = File.ReadAllText("../Infrastructure/Data/SeedData/categories.json");
+                //var categories = JsonSerializer.Deserialize<List<Categories>>(categoriesData);
                 context.Categories.AddRange(categories);
             }
 
-            if(!context.Users.Any())
+            if(context.Users.Count() < user.Count)
             {
-                var userData = File.ReadAllText("../Infrastructure/Data/SeedData/user.json");
-                var user = JsonSerializer.Deserialize<List<User>>(userData);
+                //var userData = File.ReadAllText("../Infrastructure/Data/SeedData/user.json");
+                //var user = JsonSerializer.Deserialize<List<User>>(userData);
                 context.Users.AddRange(user);
             }
 
-            if (!context.Products.Any())
+            if (context.Products.Count() < products.Count)
             {
-                var productsData = File.ReadAllText("../Infrastructure/Data/SeedData/products.json");
-                var products = JsonSerializer.Deserialize<List<Product>>(productsData);
+                //var productsData = File.ReadAllText("../Infrastructure/Data/SeedData/products.json");
+                //var products = JsonSerializer.Deserialize<List<Product>>(productsData);
                 context.Products.AddRange(products);
             }
 

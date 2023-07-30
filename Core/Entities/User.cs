@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace Core.Entities
 {
-    public class User
+    public class User : BaseEntity
     {
         public User()
         {
             CreatedAt = DateTime.Now;
         }
 
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        //[Key]
+        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        //public int Id { get; set; }
         public string Name { get; set; }
         public string Nickname { get; set; }
         public string Email { get; set; }

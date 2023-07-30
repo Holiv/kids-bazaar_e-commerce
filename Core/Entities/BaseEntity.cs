@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Core.Entities
 {
-    public class BaseProduct
+    public class BaseEntity
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

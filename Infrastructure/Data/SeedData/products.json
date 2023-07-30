@@ -1,51 +1,51 @@
 [
 	{
 		"Title":  "Camisa Infantil",
-		"Nickname":  "Camisa verde com listras brancas" ,
+		"Description":  "Camisa verde com listras brancas" ,
 		"ImgUrl":  "images/products/clothes-1.JPEG" ,
 		"Price":  20.50,
 		"CategoriesId": 1
 	},
 	{
-		"Title":  "Bermida Infantil",
-		"Nickname":  "Bermuda verde escura" ,
-		"ImgUrl":  "images/products/clothes-2.JPEG" ,
-		"Price":  25.50,
+		"Title": "Bermida Infantil",
+		"Description": "Bermuda verde escura",
+		"ImgUrl": "images/products/clothes-2.JPEG",
+		"Price": 25.50,
 		"CategoriesId": 1
 	},
 	{
-		"Title":  "Chinelo Havaiana",
-		"Nickname":  "Havaiana azul com detalhes em laranja" ,
-		"ImgUrl":  "images/products/shoes-1.JPEG" ,
-		"Price":  15.75,
+		"Title": "Chinelo Havaiana",
+		"Description": "Havaiana azul com detalhes em laranja",
+		"ImgUrl": "images/products/shoes-1.JPEG",
+		"Price": 15.75,
 		"CategoriesId": 2
 	},
 	{
-		"Title":  "Sandalia Infantil",
-		"Nickname":  "Sandalia preta com detalhes em marrom " ,
-		"ImgUrl":  "images/products/shoes-2.JPEG" ,
-		"Price":  25.75,
+		"Title": "Sandalia Infantil",
+		"Description": "Sandalia preta com detalhes em marrom ",
+		"ImgUrl": "images/products/shoes-2.JPEG",
+		"Price": 25.75,
 		"CategoriesId": 2
 	},
 	{
-		"Title":  "Dinossauro Rob�",
-		"Nickname":  "Dinossauro a pilha que anda e emite sons" ,
-		"ImgUrl":  "images/products/toys-1.JPEG" ,
-		"Price":  55.30,
+		"Title": "Dinossauro Rob�",
+		"Description": "Dinossauro a pilha que anda e emite sons",
+		"ImgUrl": "images/products/toys-1.JPEG",
+		"Price": 55.30,
 		"CategoriesId": 3
 	},
 	{
 		"Title": "Pistola de agua",
-		"Nickname": "Pistola de agua infantil com detalhes em azul e amarelo",
+		"Description": "Pistola de agua infantil com detalhes em azul e amarelo",
 		"ImgUrl": "images/products/toys-2.JPEG",
 		"Price": 10.15,
 		"CategoriesId": 3
-	},	
+	},
 	{
-		"Title":  "Camera ",
-		"Nickname":  "Pistola de agua infantil com detalhes em azul e amarelo" ,
-		"ImgUrl":  "images/products/toys-2.JPEG" ,
-		"Price":  10.15,
+		"Title": "Camera ",
+		"Description": "Pistola de agua infantil com detalhes em azul e amarelo",
+		"ImgUrl": "images/products/toys-2.JPEG",
+		"Price": 10.15,
 		"CategoriesId": 3
 	}
 ]

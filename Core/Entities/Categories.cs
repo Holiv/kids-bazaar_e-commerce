@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace Core.Entities
 {
-    public class Categories
+    public class Categories : BaseEntity
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        //[Key]
+        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        //public int Id { get; set; }
         public string Name { get; set; }
 
-        //public List<Product> Products { get; set; }
+        public ICollection<Product> Products { get; set; } = new List<Product>();
     }
 }

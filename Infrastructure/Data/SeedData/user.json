@@ -1,11 +1,20 @@
 [
 	{
-		"Name":  "Helton da Silva de Oliveira",
-		"Nickname":  "Helton Oliveira" ,
-		"Email":  "mrheltonso@gmail.com" ,
-		"PhoneNumber":  22996209854,
+		"Name": "Helton da Silva de Oliveira",
+		"Nickname": "Helton Oliveira",
+		"Email": "mrheltonso@gmail.com",
+		"PhoneNumber": 22996209854,
 		"BirthDate": "1992-01-24",
 		"Address": "Rua Raimundo de Farias Brito, 177",
-		"Description":  "Lorem ipsum dolor" ,
+		"Description": "Lorem ipsum dolor"
+	},
+	{
+		"Name": "Laiz de Alvarenga Vieira",
+		"Nickname": "Laiz Alvarenga",
+		"Email": "laizalvarenga@yahoo.com.br",
+		"PhoneNumber": 22999874566,
+		"BirthDate": "1994-06-07",
+		"Address": "Rua Raimundo de Farias Brito, 177",
+		"Description": "Lorem ipsum dolor"
 	}
 ]
