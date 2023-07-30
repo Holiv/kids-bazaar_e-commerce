@@ -1,11 +1,12 @@
+using Infrastructure.Data.Contexts;
+using KidsBazaar.Extensions;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddApplicationServices(builder.Configuration);
 
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
@@ -21,5 +22,20 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+using var scope = app.Services.CreateScope();
+var service = scope.ServiceProvider;
+var dbcontext = service.GetService<StoreContext>();
+var logger = service.GetService<ILogger<Program>>();
+
+try
+{
+    await dbcontext.Database.MigrateAsync();
+    await SeedContext.SeedAsync(dbcontext);
+}
+catch (Exception ex)
+{
+    logger.LogError(ex, "An error has ocurred during migration");
+}
 
 app.Run();

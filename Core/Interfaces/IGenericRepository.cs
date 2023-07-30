@@ -7,9 +7,15 @@ using System.Threading.Tasks;
 
 namespace Core.Interfaces
 {
-    public interface IGenericRepository<T> where T : BaseProduct
+    public interface IGenericRepository<T> where T : BaseEntity
     {
         Task<IReadOnlyList<T>> ListAllAsync();
         Task<T> GetByIdAsync(int id);
+        Task<Categories> GetCategoryByIdAsync(int id);
+        Task AddNewAsync(T entity);
+        Task<Categories> GetCategories(int id);
+        Task<IReadOnlyList<Product>> ListAllProductsAsync();
+        Product GetProductTest();
+        Task<bool> SaveChangesAsync();
     }
 }
