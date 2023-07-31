@@ -1,5 +1,6 @@
 ﻿using Core.Entities;
 using Core.Interfaces;
+using Core.Specification;
 using Infrastructure.Data.Contexts;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -43,9 +44,9 @@ namespace Infrastructure.Data.Repositories
             return product;
         }
 
-        public async Task<IReadOnlyList<T>> ListAllAsync()
+        public async Task<IReadOnlyList<T>> ListAllAsync(ISpecification<T> spec)
         {
-            var products = await context.Set<T>().ToListAsync();
+            var products = await ApplySpecification(spec).ToListAsync();
             return products;
         }
         public async Task<IReadOnlyList<Product>> ListAllProductsAsync()
@@ -66,6 +67,11 @@ namespace Infrastructure.Data.Repositories
             var hasChanges = context.ChangeTracker.HasChanges();
             int updates = await context.SaveChangesAsync();
             return (hasChanges);
+        }
+
+        private IQueryable<T> ApplySpecification(ISpecification<T> spec)
+        {
+            return SpecificationEvaluator<T>.GetQuery(context.Set<T>().AsQueryable(), spec);
         }
     }
 }

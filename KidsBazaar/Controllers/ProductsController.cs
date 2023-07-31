@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Core.Entities;
 using Core.Interfaces;
+using Core.Specification;
 using KidsBazaar.DTOs;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.JsonPatch;
@@ -26,7 +27,8 @@ namespace KidsBazaar.Controllers
         [HttpGet]
         public async Task<ActionResult<IReadOnlyList<ProductsToReturnDTO>>> GetAllProducts()
         {
-            var products = await productRepository.ListAllProductsAsync();
+            var spec = new ProductsWithCategorySpecification();
+            var products = await productRepository.ListAllAsync(spec);
             var productsDTO = mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductsToReturnDTO>>(products);
 
             return Ok(productsDTO);
