@@ -1,14 +1,18 @@
 [
 	{
-		"Name":  "Clothes"
+		"Id": 1,
+		"Name": "Clothes"
 	},
 	{
-		"Name":  "Shoes"
+		"Id": 2,
+		"Name": "Shoes"
 	},
 	{
-		"Name":  "Toys"
+		"Id": 3,
+		"Name": "Toys"
 	},
 	{
-		"Name":  "Others"
+		"Id": 4,
+		"Name": "Others"
 	}
 ]

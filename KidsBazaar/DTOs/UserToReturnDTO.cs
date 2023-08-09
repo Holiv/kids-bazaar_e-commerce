@@ -10,6 +10,5 @@ namespace KidsBazaar.DTOs
         public long PhoneNumber { get; set; }
         public DateTime BirthDate { get; set; }
         public string Address { get; set; }
-        public ICollection<Product> Products { get; set; }
     }
 }

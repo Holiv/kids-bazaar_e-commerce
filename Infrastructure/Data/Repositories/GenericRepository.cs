@@ -1,5 +1,6 @@
 ﻿using Core.Entities;
 using Core.Interfaces;
+using Core.Specification;
 using Infrastructure.Data.Contexts;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -20,45 +21,24 @@ namespace Infrastructure.Data.Repositories
             this.context = context;
         }
 
+        public async Task<IReadOnlyList<T>> ListAllAsync()
+        {
+            return await context.Set<T>().ToListAsync();
+        }
+
         public async Task AddNewAsync(T entity)
         {
             await context.Set<T>().AddAsync(entity);
         }
 
-        public async Task<T> GetByIdAsync(int id)
+        public async Task<T> GetByIdAsync(ISpecification<T> spec)
         {
-            return await context.Set<T>().FindAsync(id);
+            return await ApplySpecification(spec).FirstOrDefaultAsync();
         }
 
-        public async Task<Categories> GetCategoryByIdAsync(int id)
+        public async Task<IReadOnlyList<T>> ListAsync(ISpecification<T> spec)
         {
-            return await context.Set<Categories>()
-                .Include(c => c.Products).FirstOrDefaultAsync(c => c.Id == id);
-        }
-
-        public Product GetProductTest()
-        {
-            var product = new Product();
-            product.Title = "Product Test";
-            return product;
-        }
-
-        public async Task<IReadOnlyList<T>> ListAllAsync()
-        {
-            var products = await context.Set<T>().ToListAsync();
-            return products;
-        }
-        public async Task<IReadOnlyList<Product>> ListAllProductsAsync()
-        {
-            var products = await context.Set<Product>()
-                .Include(products => products.Categories).ToListAsync();
-            return products;
-        }
-
-        public async Task<Categories> GetCategories(int id)
-        {
-            return await context.Set<Categories>().Include(category => category.Products)
-                .Where(category => category.Id == id).FirstOrDefaultAsync();
+            return await ApplySpecification(spec).ToListAsync();
         }
 
         public async Task<bool> SaveChangesAsync()
@@ -66,6 +46,11 @@ namespace Infrastructure.Data.Repositories
             var hasChanges = context.ChangeTracker.HasChanges();
             int updates = await context.SaveChangesAsync();
             return (hasChanges);
+        }
+
+        private IQueryable<T> ApplySpecification(ISpecification<T> spec)
+        {
+            return SpecificationEvaluator<T>.GetQuery(context.Set<T>().AsQueryable(), spec);
         }
     }
 }

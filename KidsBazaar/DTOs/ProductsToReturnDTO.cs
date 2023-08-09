@@ -10,5 +10,6 @@ namespace KidsBazaar.DTOs
         public string ImgUrl { get; set; }
         public decimal Price { get; set; }
         public string Category { get; set; }
+        public string User { get; set; }
     }
 }

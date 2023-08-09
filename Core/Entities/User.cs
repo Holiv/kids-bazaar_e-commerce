@@ -25,7 +25,7 @@ namespace Core.Entities
         public DateTime BirthDate { get; set; }
         public string Address { get; set; }
         public DateTime CreatedAt { get; }
-        public ICollection<Product> Products { get; set; }
+        public ICollection<Product> Products { get; set; } = new List<Product>();
 
     }
 }
