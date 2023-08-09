@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Core.Specification
 {
-    public class UserWithProductsSpecification : BaseSpecification<User>
+    public class CategoryByIdSpecification : BaseSpecification<Categories>
     {
-        public UserWithProductsSpecification()
+        public CategoryByIdSpecification(int id) : base(c => c.Id == id)
         {
-            AddIncludes(u => u.Products);
+            //AddIncludes(c => c.Products);
         }
     }
 }

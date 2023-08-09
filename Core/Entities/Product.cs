@@ -19,9 +19,11 @@ namespace Core.Entities
         public DateTime CreatedAt { get; }
         public string ImgUrl { get; set; }
         public decimal Price { get; set; }
-
-        [ForeignKey("CategoriesId")]
+        [ForeignKey("CategoryId")]
         public int CategoriesId { get; set; }
         public Categories Categories { get; set; }
+        [ForeignKey("UserId")]
+        public int UserId { get; set; }
+        public User User { get; set; }
     }
 }

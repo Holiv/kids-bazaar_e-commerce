@@ -4,48 +4,55 @@
 		"Description":  "Camisa verde com listras brancas" ,
 		"ImgUrl":  "images/products/clothes-1.JPEG" ,
 		"Price":  20.50,
-		"CategoriesId": 1
+		"CategoriesId": 1,
+		"UserId": 1
 	},
 	{
 		"Title": "Bermida Infantil",
 		"Description": "Bermuda verde escura",
 		"ImgUrl": "images/products/clothes-2.JPEG",
 		"Price": 25.50,
-		"CategoriesId": 1
+		"CategoriesId": 1,
+		"UserId": 1
 	},
 	{
 		"Title": "Chinelo Havaiana",
 		"Description": "Havaiana azul com detalhes em laranja",
 		"ImgUrl": "images/products/shoes-1.JPEG",
 		"Price": 15.75,
-		"CategoriesId": 2
+		"CategoriesId": 2,
+		"UserId": 2
 	},
 	{
 		"Title": "Sandalia Infantil",
 		"Description": "Sandalia preta com detalhes em marrom ",
 		"ImgUrl": "images/products/shoes-2.JPEG",
 		"Price": 25.75,
-		"CategoriesId": 2
+		"CategoriesId": 2,
+		"UserId": 2
 	},
 	{
 		"Title": "Dinossauro Rob�",
 		"Description": "Dinossauro a pilha que anda e emite sons",
 		"ImgUrl": "images/products/toys-1.JPEG",
 		"Price": 55.30,
-		"CategoriesId": 3
+		"CategoriesId": 3,
+		"UserId": 1
 	},
 	{
 		"Title": "Pistola de agua",
 		"Description": "Pistola de agua infantil com detalhes em azul e amarelo",
 		"ImgUrl": "images/products/toys-2.JPEG",
 		"Price": 10.15,
-		"CategoriesId": 3
+		"CategoriesId": 3,
+		"UserId": 2
 	},
 	{
 		"Title": "Camera ",
 		"Description": "Pistola de agua infantil com detalhes em azul e amarelo",
 		"ImgUrl": "images/products/toys-2.JPEG",
 		"Price": 10.15,
-		"CategoriesId": 3
+		"CategoriesId": 3,
+		"UserId": 2
 	}
 ]

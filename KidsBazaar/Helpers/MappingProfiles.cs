@@ -9,7 +9,8 @@ namespace KidsBazaar.Helpers
         public MappingProfiles()
         {
             CreateMap<Product, ProductsToReturnDTO>()
-                .ForMember(d => d.Category, o => o.MapFrom(s => s.Categories.Name));
+                .ForMember(d => d.Category, o => o.MapFrom(s => s.Categories.Name))
+            .ForMember(d => d.User, o => o.MapFrom(s => s.User.Nickname));
             CreateMap<User, UserToReturnDTO>();
             CreateMap<Product, ProductToUpdateDTO>();
             CreateMap<ProductToUpdateDTO, Product>();

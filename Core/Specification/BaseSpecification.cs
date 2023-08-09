@@ -22,9 +22,9 @@ namespace Core.Specification
 
         public List<Expression<Func<T, object>>> Includes { get; } = new List<Expression<Func<T, object>>>();
 
-        public Expression<Func<T, bool>> OrderBy { get; private set; }
+        public Expression<Func<T, object>> OrderBy { get; private set; }
 
-        public Expression<Func<T, bool>> OrderByDescending { get; private set; }
+        public Expression<Func<T, object>> OrderByDescending { get; private set; }
 
         public int Take { get; private set; }
 
@@ -37,12 +37,12 @@ namespace Core.Specification
             Includes.Add(expression);
         }
 
-        public void AddOrderBy(Expression<Func<T, bool>> expression)
+        public void AddOrderBy(Expression<Func<T, object>> expression)
         {
             OrderBy = expression;
         }
 
-        public void AddOrderByDescending(Expression<Func<T, bool>> expression)
+        public void AddOrderByDescending(Expression<Func<T, object>> expression)
         {
             OrderByDescending = expression;
         }
